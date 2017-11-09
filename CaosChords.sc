@@ -2,6 +2,7 @@
 //Chord generator over LFPulse wave
 //Part of CaosPercLib 1.1
 CaosChords {
+
 	*ar{|chord = 'Mmaj7', att = 0.05, rel = 1, note = 57, iphase = 0.025, width = 0.1, cutf = 1200, rq = 0.5, pan = 0, gate = 0, amp = 0.5,doneaction=2|
 		var sint,filt,env;
 		var interval,notes,chords,ton,third,fifth,seventh;
@@ -16,6 +17,7 @@ CaosChords {
 			[0,4,6,12],
 			[0,4,8,12]
 		];
+
 		if(chords.includes(chord),{
 			notes = note+interval[chords.indexOf(chord)];
 			},{7.do{"ERR: Use 'M', 'm', 'M7', 'm7', 'Mmaj7', 'mmaj7', '5dim7' or '5aug7' only as first CaosChord.sc argument".warn}}//if none of above
