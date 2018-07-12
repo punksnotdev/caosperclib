@@ -17,7 +17,7 @@ CaosKick2 {
 		var kick,env;
    	     		kick=RHPF.ar(
 						 Pulse.ar(
-						     	Pulse.ar(modFreq,modbw,freq1,freq2),
+						     	Pulse.ar(t,modbw,freq1,freq2),
 						 bw,amp/4),
         		    lowcutfreq,0.5);
         		kick=CompanderD.ar(kick,0.6,0.59,0.8);

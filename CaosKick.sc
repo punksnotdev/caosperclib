@@ -13,7 +13,7 @@ CaosKick {
 
 	*robot {|att= 0.01, rel= 0.25, modFreq= 2, modbw= 0.5, freq1= 60, freq2= 64, lowcutfreq= 50, amp1= 0.75, amp2= 0.75, t= 1,tp= 0 |
 		var kick,env;
-		kick=this.signal(modFreq,modbw,freq1,freq2,amp1,amp2,lowcutfreq);
+		kick=this.signal(t,modbw,freq1,freq2,amp1,amp2,lowcutfreq);
 		kick=this.comp(kick);
 		env=EnvGen.ar(Env.perc(att,rel),Impulse.kr(t,tp),doneAction:0);
 		^Pan2.ar(kick*env,[-1,0.98]);
